@@ -1,0 +1,17 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: interactive-chat
+  # se deccomentti queste 2 righe crea lo schema del db
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/chat?zeroDateTimeBehavior=Round&serverTimezone=Europe/Rome
+    #    url: jdbc:mysql://192.168.1.254:3308/ants?zeroDateTimeBehavior=Round
+    username: ****
+    password: *****
