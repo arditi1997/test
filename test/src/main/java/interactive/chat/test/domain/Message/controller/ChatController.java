@@ -22,7 +22,7 @@ public class ChatController {
         return new ResponseEntity<>(chatService.listUnreadMessages(userId), HttpStatus.OK);
     }
 
-    //mark
+    //mark message as seen
     @PostMapping("/mark-messages-seen")
     public ResponseEntity<?> markMessagesAsSeen(@RequestParam("userId") String userId, @RequestParam("messageId") String messageId) {
         return new ResponseEntity<>(chatService.markMessagesAsSeen(userId, messageId), HttpStatus.OK);
