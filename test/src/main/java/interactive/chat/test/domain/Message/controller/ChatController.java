@@ -16,11 +16,13 @@ public class ChatController {
 
     private final ChatService chatService;
 
+    //list
     @GetMapping("/list-all-unread-messages")
     public ResponseEntity<?> listUnreadMessages( @RequestParam("userId") String userId) {
         return new ResponseEntity<>(chatService.listUnreadMessages(userId), HttpStatus.OK);
     }
 
+    //mark
     @PostMapping("/mark-messages-seen")
     public ResponseEntity<?> markMessagesAsSeen(@RequestParam("userId") String userId, @RequestParam("messageId") String messageId) {
         return new ResponseEntity<>(chatService.markMessagesAsSeen(userId, messageId), HttpStatus.OK);
